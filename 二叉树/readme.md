@@ -14,6 +14,16 @@
 
 ==> TreeDemo.java
 
+### 2. 二叉搜索/查找树（Binary Search Tree，简称 BST）
+
+根节点左边的节点都比它小，根节点右边的节点都比它大
+
+
+#### 2.1 动态创建二叉查找树
+==> TreeDemo2.java
+
+
+
 
 
 
