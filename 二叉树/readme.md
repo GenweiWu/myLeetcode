@@ -10,7 +10,9 @@
 - 先序遍历（根->左->右）
 - 中序遍历   (左->根->右)
 - 后序遍历   (左->右->根)
+- 层次遍历：只需按层次遍历即可
 
+==> TreeDemo.java
 
 
 
@@ -20,7 +22,7 @@
 ### 参考
 
 - https://juejin.im/post/5ab5a01d518825555c1d9a24
-
+- https://blog.csdn.net/google19890102/article/details/53926704
 
 
 
