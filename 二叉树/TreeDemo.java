@@ -32,7 +32,7 @@ public class TreeDemo
     /**
      * 先序遍历
      */
-    private static void preOrderTraverse(TreeNode treeNode)
+    public static void preOrderTraverse(TreeNode treeNode)
     {
         if (treeNode != null)
         {
@@ -46,7 +46,7 @@ public class TreeDemo
     /**
      * 中序遍历
      */
-    private static void inOrderTraverse(TreeNode treeNode)
+    public static void inOrderTraverse(TreeNode treeNode)
     {
         if (treeNode != null)
         {
@@ -59,7 +59,7 @@ public class TreeDemo
     /**
      * 后序遍历
      */
-    private static void postOrderTraverse(TreeNode treeNode)
+    public static void postOrderTraverse(TreeNode treeNode)
     {
         if (treeNode != null)
         {
