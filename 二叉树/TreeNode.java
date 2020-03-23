@@ -20,4 +20,14 @@ public class TreeNode
     {
         this.value = value;
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TreeNode{" +
+            "value=" + value +
+            ", leftNode=" + leftNode +
+            ", rightNode=" + rightNode +
+            '}';
+    }
 }
