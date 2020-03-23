@@ -91,17 +91,21 @@ public class TreeDemo3
                 System.out.print(node.getValue() + ",");
                 --curWidth;
                 
-                TreeNode leftNode = node.getLeftNode();
-                if (leftNode != null)
+                if (node != null)
                 {
-                    linkedList.add(leftNode);
+                    TreeNode leftNode = node.getLeftNode();
+                    if (leftNode != null)
+                    {
+                        linkedList.add(leftNode);
+                    }
+                    
+                    TreeNode rightNode = node.getRightNode();
+                    if (rightNode != null)
+                    {
+                        linkedList.add(rightNode);
+                    }
                 }
                 
-                TreeNode rightNode = node.getRightNode();
-                if (rightNode != null)
-                {
-                    linkedList.add(rightNode);
-                }
             }
             System.out.println();
             
