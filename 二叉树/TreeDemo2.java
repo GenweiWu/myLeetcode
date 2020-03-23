@@ -30,7 +30,7 @@ public class TreeDemo2
     @Test
     public void test02()
     {
-        Integer[] treeArray = {1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8};
+        Integer[] treeArray = {1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8, 9};
         
         TreeNode rootNode = createTreeByLevel(treeArray);
         System.out.println(rootNode);
@@ -40,7 +40,7 @@ public class TreeDemo2
      * 2.层次遍历生成树
      *
      * <pre>
-     * {1,2,3,4,5,null,6,7,null,null,null,null,8}
+     * {1,2,3,4,5,null,6,7,null,null,null,null,8,9}
      *
      * 生成
      *                 1
@@ -50,7 +50,8 @@ public class TreeDemo2
      *           4  5     6
      *          /          \
      *         7            8
-     *
+     *        /
+     *       9
      * </pre>
      */
     
@@ -90,6 +91,11 @@ public class TreeDemo2
                 else
                 {
                     System.out.println(treeNode.getValue() + "/" + null);
+                }
+    
+                if (index > treeArray.length - 1)
+                {
+                    break;
                 }
                 
                 //handle right node
