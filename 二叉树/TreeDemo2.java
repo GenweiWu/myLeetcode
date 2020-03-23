@@ -8,7 +8,7 @@ import org.junit.Test;
  * 动态创建树
  * <p>
  * 1. 动态创建二叉查找树BST
- * 2.
+ * 2. 层次遍历生成树
  */
 public class TreeDemo2
 {
