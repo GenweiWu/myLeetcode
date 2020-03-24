@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,24 +26,6 @@ public class TreeNodeUtil
     
     @Test
     public void test01b()
-    {
-        Integer[] array = {1, 2, 3, 2, null, 2, 4, 6};
-        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
-        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
-        Assert.assertArrayEquals(array, actual);
-    }
-    
-    @Test
-    public void test02a()
-    {
-        Integer[] array = {1, 2, 3, 2, null, 2, 4};
-        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
-        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
-        Assert.assertArrayEquals(array, actual);
-    }
-    
-    @Test
-    public void test02b()
     {
         Integer[] array = {1, 2, 3, 2, null, 2, 4, 6};
         TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
@@ -115,40 +96,6 @@ public class TreeNodeUtil
         }
         
         return rootNode;
-    }
-    
-    /**
-     * 采用递归创建二叉树
-     */
-    public static TreeNode createTreeByLevel2(Integer[] treeArray)
-    {
-        if (treeArray.length == 0)
-        {
-            return null;
-        }
-        
-        LinkedList<Integer> treeNodeList = new LinkedList<>(Arrays.asList(treeArray));
-        return doCreateTreeByLevel(treeNodeList);
-    }
-    
-    private static TreeNode doCreateTreeByLevel(LinkedList<Integer> treeNodeList)
-    {
-        if (!treeNodeList.isEmpty())
-        {
-            Integer value = treeNodeList.pollFirst();
-            if (value == null)
-            {
-                return null;
-            }
-            else
-            {
-                TreeNode newNode = new TreeNode(value);
-                newNode.left = doCreateTreeByLevel(treeNodeList);
-                newNode.right = doCreateTreeByLevel(treeNodeList);
-                return newNode;
-            }
-        }
-        return null;
     }
     
     public static Integer[] outputTreeByLevel(TreeNode rootNode)
