@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 import tree.TreeNode;
 
@@ -12,6 +16,42 @@ import tree.TreeNode;
  */
 public class TreeNodeUtil
 {
+    @Test
+    public void test01a()
+    {
+        Integer[] array = {1, 2, 3, 2, null, 2, 4};
+        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
+        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
+        Assert.assertArrayEquals(array, actual);
+    }
+    
+    @Test
+    public void test01b()
+    {
+        Integer[] array = {1, 2, 3, 2, null, 2, 4, 6};
+        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
+        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
+        Assert.assertArrayEquals(array, actual);
+    }
+    
+    @Test
+    public void test02a()
+    {
+        Integer[] array = {1, 2, 3, 2, null, 2, 4};
+        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
+        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
+        Assert.assertArrayEquals(array, actual);
+    }
+    
+    @Test
+    public void test02b()
+    {
+        Integer[] array = {1, 2, 3, 2, null, 2, 4, 6};
+        TreeNode treeNode = TreeNodeUtil.createTreeByLevel(array);
+        Integer[] actual = TreeNodeUtil.outputTreeByLevel(treeNode);
+        Assert.assertArrayEquals(array, actual);
+    }
+    
     public static TreeNode createTreeByLevel(Integer[] treeArray)
     {
         if (treeArray.length == 0)
@@ -77,6 +117,40 @@ public class TreeNodeUtil
         return rootNode;
     }
     
+    /**
+     * 采用递归创建二叉树
+     */
+    public static TreeNode createTreeByLevel2(Integer[] treeArray)
+    {
+        if (treeArray.length == 0)
+        {
+            return null;
+        }
+        
+        LinkedList<Integer> treeNodeList = new LinkedList<>(Arrays.asList(treeArray));
+        return doCreateTreeByLevel(treeNodeList);
+    }
+    
+    private static TreeNode doCreateTreeByLevel(LinkedList<Integer> treeNodeList)
+    {
+        if (!treeNodeList.isEmpty())
+        {
+            Integer value = treeNodeList.pollFirst();
+            if (value == null)
+            {
+                return null;
+            }
+            else
+            {
+                TreeNode newNode = new TreeNode(value);
+                newNode.left = doCreateTreeByLevel(treeNodeList);
+                newNode.right = doCreateTreeByLevel(treeNodeList);
+                return newNode;
+            }
+        }
+        return null;
+    }
+    
     public static Integer[] outputTreeByLevel(TreeNode rootNode)
     {
         if (rootNode == null)
@@ -116,6 +190,13 @@ public class TreeNodeUtil
                     result.add(null);
                 }
             }
+        }
+        
+        //删除最后的null
+        Integer last = result.get(result.size() - 1);
+        if (last == null)
+        {
+            result.remove(result.size() - 1);
         }
         
         return result.toArray(new Integer[0]);
