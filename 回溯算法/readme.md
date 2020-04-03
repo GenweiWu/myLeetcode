@@ -1,3 +1,4 @@
+## 算法
 > https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/hui-su-suan-fa-xiang-jie-xiu-ding-ban
 ```
 for 选择 in 选择列表:
@@ -9,3 +10,5 @@ for 选择 in 选择列表:
     路径.remove(选择)
     将该选择再加入选择列表
 ```    
+
+### 看下`l22.md`来了解通过局部变量进行性能提升
