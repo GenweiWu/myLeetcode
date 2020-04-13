@@ -4,6 +4,21 @@
 - https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/koko-tou-xiang-jiao
 
 ## 算法模板
+```
+1. [0,len-1]
+2. [left,right]
+-->mid因为mid分析过了
+左移[left,mid-1]   右移[mid+1,right]
+
+3. 求左边界
+左移[left,mid-1],left=mid+1可能右侧溢出
+
+4. 求右边界
+右移[mid+1,right],right=mid-1可能左溢出
+
+```
+
+
 ```java
 int binary_search(int[] nums, int target) {
     int left = 0, right = nums.length - 1; 
