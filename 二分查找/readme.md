@@ -31,11 +31,11 @@ int left_bound(int[] nums, int target) {
         } else if (nums[mid] > target) {
             right = mid - 1;
         } else if (nums[mid] == target) {
-            // 别返回，锁定左侧边界
+            // [左移]别返回，锁定左侧边界
             right = mid - 1;
         }
     }
-    // 最后要检查 left 越界的情况
+    // 最后要检查 left 越界的情况[左边界，所以返回left;同时left唯一操作是+1,所以可能右侧溢出]
     if (left >= nums.length || nums[left] != target)
         return -1;
     return left;
@@ -51,11 +51,11 @@ int right_bound(int[] nums, int target) {
         } else if (nums[mid] > target) {
             right = mid - 1;
         } else if (nums[mid] == target) {
-            // 别返回，锁定右侧边界
+            // [右移]别返回，锁定右侧边界
             left = mid + 1;
         }
     }
-    // 最后要检查 right 越界的情况
+    // 最后要检查 right 越界的情况[右边界，所以返回right;同时right唯一操作是-1,所以可能左侧溢出]
     if (right < 0 || nums[right] != target)
         return -1;
     return right;
